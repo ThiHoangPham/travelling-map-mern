@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Pin = require("../models/User");
 const bcrypt = require('bcrypt');
 const User = require("../models/User");
+const { validate } = require("../models/User");
 
 // resgister
 
@@ -28,10 +29,24 @@ router.post("/register", async (req, res) => {
 
 // login
 router.post("/login", async (req, res) => {
-    try{
+    try {
         // find user
+        const user = await User.findOne({ username: req.body.username })
+        !user && res.status(400).json("wrong username or password!");
 
-    }catch
-})
+        // validate password
+        const validPassword = await bcrypt.compare(
+            req.body.password,
+            user.password
+        );
+        !validPassword && res.status(400).json("wrong username or password!");
+
+        // send res
+        res.status(200).json({ _id: user._id, username: username });
+
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router;
