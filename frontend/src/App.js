@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Map from 'react-map-gl';
+import Map, { Marker } from 'react-map-gl';
 
 
 function App() {
@@ -13,8 +13,11 @@ function App() {
       }}
       style={{ width: "100vw", height: "100vh" }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
-    />
-  );
+    >
+      <Marker longitude={-100} latitude={40} anchor="bottom" >
+        <img src="./pin.png" />
+      </Marker>
+    </Map>
+  )
 }
-
 export default App;
