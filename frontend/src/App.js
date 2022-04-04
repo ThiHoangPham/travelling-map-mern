@@ -14,8 +14,11 @@ function App() {
       style={{ width: "100vw", height: "100vh" }}
       mapStyle="mapbox://styles/mapbox/streets-v9"
     >
-      <Marker longitude={-100} latitude={40} anchor="bottom" >
-        <img src="./pin.png" />
+      <Marker
+        latitude={48.858093}
+        longitude={2.294694}
+        offsetLeft={-20}
+        offsetTop={-10}>
       </Marker>
     </Map>
   )
