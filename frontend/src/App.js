@@ -23,7 +23,7 @@ function App() {
         offsetTop={-10}>
         <Room style={{ fontSize: visualViewport.zoom * 7, color: "slateblue" }} /></Marker>
 
-      <Popup
+      {/* <Popup
         latitude={48.858093}
         longitude={2.294694}
         closeButton={true}
@@ -33,20 +33,20 @@ function App() {
           <label>Place</label>
           <h4 className='place'>Eiffell Tower</h4>
           <label>Review</label>
-          <p>Beautifull place. I like it.</p>
+          <p className='desc'>Beautifull place. I like it.</p>
           <label>Rating</label>
           <div className='stars'>
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Star />
+            <Star className='star' />
+            <Star className='star' />
+            <Star className='star' />
+            <Star className='star' />
+            <Star className='star' />
           </div>
           <label>Information</label>
-          <span className='username'>Created by<b>Adam</b></span>
+          <span className='username'>Created by <b>Adam</b></span>
           <span className='date'> 2 hours ago</span>
         </div>
-      </Popup>
+      </Popup> */}
     </Map >
   )
 }
